@@ -17,8 +17,11 @@ export class App extends Component {
   }
 
   addMessage = (message, isUser) => {
-    const { messages } = this.props;
-    this.props.addMessage(message)
+    let messageToAdd = {
+      isUser: isUser,
+      message: message
+    }
+    this.props.addMessage(messageToAdd)
   }
 
   clearMessages = () => {
