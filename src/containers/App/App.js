@@ -17,11 +17,7 @@ export class App extends Component {
   }
 
   addMessage = (message, isUser) => {
-    let messageToAdd = {
-      isUser: isUser,
-      message: message
-    }
-    this.props.addMessage(messageToAdd)
+    this.props.addMessage(message, isUser)
   }
 
   clearMessages = () => {
@@ -40,7 +36,7 @@ export class App extends Component {
 
   render() {
     const { user } = this.props;
-    const { messages } = this.state;
+    const { messages } = this.props;
     return (
       <div className="App">
         <Header signOut={this.signOut} />
